@@ -1,0 +1,87 @@
+[{
+    title : '@@form.mobile.element.editRangeSlider@@',
+    properties : [{
+        name : 'id',
+        label : '@@form.checkbox.id@@',
+        type : 'autocomplete',
+        required : 'True',
+        regex_validation : '^[a-zA-Z0-9_]+$',
+        validation_message : '@@form.checkbox.invalidId@@',
+        options_callback : 'FormBuilder.getAllFieldOptions'
+    },
+    {
+        name : 'label',
+        label : '@@form.checkbox.label@@',
+        value : '@@form.mobile.element.rangeSlider.label@@',
+        type : 'textfield'
+    },
+    {
+        name : 'minValue',
+        label : '@@form.mobile.element.rangeSlider.minValue@@',
+        type : 'textfield',
+        value: '0',
+        required : 'True'
+    },
+    {
+        name : 'maxValue',
+        label : '@@form.mobile.element.rangeSlider.maxValue@@',
+        type : 'textfield',
+        value: '100',
+        required : 'True'
+    },
+    {
+        name : 'defaultValue',
+        label : '@@form.mobile.element.rangeSlider.default@@',
+        type : 'textfield',
+        value: '50',
+        required : 'True'
+    }]
+},
+{
+    title : '@@form.checkbox.advancedOptions@@',
+    properties : [{
+        label : '@@form.checkbox.data@@',
+        type : 'header'
+    },
+    {
+        name : 'validator',
+        label : '@@form.checkbox.validator@@',
+        type : 'elementselect',
+        options_ajax : '[CONTEXT_PATH]/web/property/json/getElements?classname=org.joget.apps.form.model.FormValidator',
+        url : '[CONTEXT_PATH]/web/property/json[APP_PATH]/getPropertyOptions'
+    },
+    {
+        label : '@@form.checkbox.ui@@',
+        type : 'header'
+    },
+    {
+        name : 'readonly',
+        label : '@@form.checkbox.readonly@@',
+        type : 'checkbox',
+        value : 'False',
+        options : [{
+            value : 'true',
+            label : ''
+        }]
+    },
+    {
+        name : 'readonlyLabel',
+        label : '@@form.checkbox.readonlyLabel@@',
+        type : 'checkbox',
+        value : 'False',
+        options : [{
+            value : 'true',
+            label : ''
+        }]
+    },
+    {
+        label : '@@form.checkbox.workflow@@',
+        type : 'header'
+    },
+    {
+        name : 'workflowVariable',
+        label : '@@form.checkbox.workflowVariable@@',
+        type : 'autocomplete',
+        options_ajax : '[CONTEXT_PATH]/web/json/console/app[APP_PATH]/workflowVariable/options'
+    }]
+}]
