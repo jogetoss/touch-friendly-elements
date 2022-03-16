@@ -10,18 +10,18 @@
         <#else>
             <label tabindex="0" class="slidecontainer">
                     <input type="range" min="${element.properties.minValue!}" max="${element.properties.maxValue!}" <#if value == ''>value="${element.properties.defaultValue!}"<#else>value="${value!?html}"</#if> class="rangeSlider" name="${elementParamName!}" <#if element.properties.readonly! != 'true'>id="${elementParamName!}"</#if> <#if element.properties.readonly! == 'true'> disabled</#if> style="touch-action: none;"/>
-                    <p style="text-align:center;"><span id="demo"><#if (element.properties.readonly! == 'true' && element.properties.readonlyLabel! != 'true')><#if value == ''>${element.properties.defaultValue!}<#else>${value!?html}</#if></#if></span></p>
+                    <p style="text-align:center;"><span id="${elementParamName!}_value"><#if (element.properties.readonly! == 'true' && element.properties.readonlyLabel! != 'true')><#if value == ''>${element.properties.defaultValue!}<#else>${value!?html}</#if></#if></span></p>
             </label>
         </#if>
     </div>
     <div style="clear:both;"></div>
     <script type="text/javascript">
-        var slider = document.getElementById("${elementParamName!}");
-        var output = document.getElementById("demo");
-        output.innerHTML = slider.value;
+        var slider_${elementParamName!} = document.getElementById("${elementParamName!}");
+        var output_${elementParamName!} = document.getElementById("${elementParamName!}_value");
+        output_${elementParamName!}.innerHTML = slider_${elementParamName!}.value;
 
-        slider.oninput = function() {
-        output.innerHTML = this.value;
+        slider_${elementParamName!}.oninput = function() {
+        output_${elementParamName!}.innerHTML = this.value;
         }
     </script>
     <style>

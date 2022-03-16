@@ -23,7 +23,7 @@ public class rangeSliderField extends CheckBox implements FormBuilderPaletteElem
 
     @Override
     public String getVersion() {
-        return "7.0.0";
+        return "7.0.1";
     }
 
     @Override
