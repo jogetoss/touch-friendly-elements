@@ -23,7 +23,7 @@ public class rangeSliderField extends CheckBox implements FormBuilderPaletteElem
 
     @Override
     public String getVersion() {
-        return "7.0.1";
+        return "7.0.2";
     }
 
     @Override
@@ -64,6 +64,21 @@ public class rangeSliderField extends CheckBox implements FormBuilderPaletteElem
 
         String html = FormUtil.generateElementHtml(this, formData, template, dataModel);
         return html;
+    }
+    
+    @Override
+    public Boolean selfValidate(FormData formData) {
+        Boolean valid = true;
+        String id = FormUtil.getElementParameterName(this);
+        int value = Integer.parseInt(FormUtil.getElementPropertyValue(this, formData));
+        int minValue = Integer.parseInt(getPropertyString("minValue"));
+        int maxValue = Integer.parseInt(getPropertyString("maxValue"));
+
+        if (!(value >= minValue && value <= maxValue)) {
+            valid = false;
+            formData.addFormError(id, AppPluginUtil.getMessage("form.mobile.element.rangeSlider.errorMsg", getClassName(), MESSAGE_PATH));
+        }
+        return valid;
     }
 
     @Override
