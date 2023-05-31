@@ -23,7 +23,7 @@ public class rangeSliderField extends CheckBox implements FormBuilderPaletteElem
 
     @Override
     public String getVersion() {
-        return "7.0.3";
+        return "7.0.4";
     }
 
     @Override
@@ -59,7 +59,12 @@ public class rangeSliderField extends CheckBox implements FormBuilderPaletteElem
         String value = FormUtil.getElementPropertyValue(this, formData);
 
         value = SecurityUtil.decrypt(value);
-
+        
+        //set default value
+        if (value == null || value.isEmpty()) {
+            value = getPropertyString("defaultValue");
+        }
+        
         dataModel.put("value", value);
 
         String html = FormUtil.generateElementHtml(this, formData, template, dataModel);

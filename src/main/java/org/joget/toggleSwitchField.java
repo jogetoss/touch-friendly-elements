@@ -23,7 +23,7 @@ public class toggleSwitchField extends CheckBox implements FormBuilderPaletteEle
 
     @Override
     public String getVersion() {
-        return "7.0.3";
+        return "7.0.4";
     }
 
     @Override
@@ -63,6 +63,11 @@ public class toggleSwitchField extends CheckBox implements FormBuilderPaletteEle
 
         value = SecurityUtil.decrypt(value);
 
+        //set default value to not on check value when there is no value
+        if (value == null || value.isEmpty()) {
+            value = getPropertyString("notOnCheckValue");
+        }
+        
         dataModel.put("value", value);
 
         String html = FormUtil.generateElementHtml(this, formData, template, dataModel);

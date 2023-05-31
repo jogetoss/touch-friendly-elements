@@ -37,6 +37,11 @@
         type : 'header'
     },
     {
+        name : 'value',
+        label : '@@form.textfield.value@@',
+        type : 'textfield'
+    },
+    {
         name : 'validator',
         label : '@@form.checkbox.validator@@',
         type : 'elementselect',
