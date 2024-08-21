@@ -9,7 +9,7 @@
         <#else>
                 <label tabindex="0" class="switch">
                     <input id="${elementParamName!}" name="${elementParamName!}" type="hidden" value="${value!?html}"/>
-                    <input <#if element.properties.readonly! != 'true'>id="${elementParamName!}_ui"</#if> type="checkbox" value="${element.properties.onCheckValue!}" <#if error??>class="form-error-cell"</#if> <#if element.properties.readonly! == 'true'> disabled</#if> <#if value?? && value == element.properties.onCheckValue!>checked</#if> />              
+                    <input <#if element.properties.readonly! != 'true'>id="${elementParamName!}_ui" name="${elementParamName!}"</#if> type="checkbox" value="${element.properties.onCheckValue!}" <#if error??>class="form-error-cell"</#if> <#if element.properties.readonly! == 'true'> disabled</#if> <#if value?? && value == element.properties.onCheckValue!>checked</#if> />              
                     <span class="tSlider round"></span>
                 </label>
         </#if>

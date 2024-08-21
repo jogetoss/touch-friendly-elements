@@ -23,7 +23,7 @@ public class ListSelectionElement extends CheckBox implements FormBuilderPalette
 
     @Override
     public String getVersion() {
-        return "7.0.4";
+        return Activator.VERSION;
     }
 
     @Override

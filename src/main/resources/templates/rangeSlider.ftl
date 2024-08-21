@@ -22,7 +22,7 @@
                 output_${elementParamName!}.innerHTML = slider_${elementParamName!}.value;
 
                 slider_${elementParamName!}.oninput = function() {
-                output_${elementParamName!}.innerHTML = this.value;
+                    output_${elementParamName!}.innerHTML = this.value;
                 }
             }
         });
@@ -41,7 +41,7 @@
 
             .rangeSlider {
                 -webkit-appearance: none;
-                width: 100%;
+                width: 100% !important;
                 height: 7px;
                 border-radius: 5px;  
                 background: #d3d3d3;

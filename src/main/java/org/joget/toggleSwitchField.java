@@ -23,7 +23,7 @@ public class toggleSwitchField extends CheckBox implements FormBuilderPaletteEle
 
     @Override
     public String getVersion() {
-        return "7.0.4";
+        return Activator.VERSION;
     }
 
     @Override
